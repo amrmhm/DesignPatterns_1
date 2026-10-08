@@ -269,6 +269,147 @@
 //wavFile.execute(new NormalizeFilter());
 
 
+//using Design_Patterns.Composite;
+
+//var group1 = new Group();
+
+//group1.add(new Shape());
+//group1.add(new Shape());
+
+//var group2 = new Group();
+
+//group2.add(new Shape());
+//group2.add(new Shape());
+
+//var group = new Group();
+
+//group.add(group1);
+//group.add(group2);
+
+//group.render();
+//group.move();
+
+//using Design_Patterns.Composite.EX;
+
+//var subTeam1 = new Team();
+//subTeam1.add(new Truck());
+//subTeam1.add(new HumanResource());
+//subTeam1.add(new HumanResource());
+
+//var subTeam2 = new Team();
+//subTeam2.add(new Truck());
+//subTeam2.add(new HumanResource());
+//subTeam2.add(new HumanResource());
+
+//var team = new Team();
+//team.add(subTeam1);
+//team.add(subTeam2);
+
+//team.deploy();
+
+
+//using Design_Patterns.Adapter;
+//using Design_Patterns.Adapter.AvaFIlter;
+
+//var viewImage = new ViewFilter(new Image());
+//viewImage.apply(new CarmelFilter(new Carmel()));
+
+//using Design_Patterns.Adapter.EX;
+//using Design_Patterns.Adapter.EX.Gmail;
+
+//var client = new EmailClient();
+//client.addProvider(new GmailAdaptee(new GmailClient()));
+//client.downloadEmails();
+
+//using Design_Patterns.Decorator;
+
+//var cloudStream = new CompresedCloudStream();
+//cloudStream.write("Hello World");
 
 
 
+
+
+//using Design_Patterns.Decorator;
+//storeCreadit(new EncryeptedCloudStream(new CompresedCloudStream(new CloudStream())));
+
+//static void storeCreadit (Streams stream)
+//{
+//    stream.write("hello world");
+//}
+
+//using Design_Patterns.Decorator.EX;
+
+//var editor = new Editor();
+//editor.openProject("...");
+
+
+//using Design_Patterns.Facade;
+//var services = new NotificationServices();
+//services.Send("Hello World", "target");
+
+//using Design_Patterns.Facade.EX;
+
+//Demo.show();
+
+//using Design_Patterns.Flyweight;
+
+//var pointIconFactory = new PointIconFactory(); 
+//var pointServices = new PointServices(pointIconFactory);
+
+//  var points = pointServices.getPoint();
+//foreach(var point in points)
+//{
+//    point.draw();
+//}
+
+
+
+
+//using Design_Patterns.Flyweight.EX;
+
+//var contextFactory = new CellContextFactory();
+//var sheet = new SpreadSheet(contextFactory);
+//sheet.setContent(0, 0, "Hello");
+//sheet.setContent(1, 0, "World");
+//sheet.setFontFamily(0, 0, "Arial");
+//sheet.render();
+
+//using Design_Patterns.Bridge;
+
+//var remoteControl = new AdvancedRemoteControl(new SonyTV());
+//remoteControl.SetChannel(5);
+
+//using Design_Patterns.Proxy;
+
+//string[] fileNames = {"a" , "b" , "c"};
+
+//var libarary = new Libarary();
+
+//foreach(var fileName in fileNames)
+//{
+//    libarary.Add(new loggingEBook(fileName));
+//}
+
+//libarary.openEbook("a");
+
+using Design_Patterns.Proxy.EX;
+
+var dbContext = new DbContext();
+
+// We read an object (eg a product) from a database.
+var product = dbContext.getProduct(1);
+
+// We modify the properties of the object in memory.
+product.setName("Updated Name");
+
+// DbContext should keep track of changed objects in memory.
+// When we call saveChanges(), it'll automatically generate
+// the right SQL statements to update our database.
+dbContext.saveChanges();
+
+// After saving the changes to the database, we can
+// change our in-memory object again and save the changes.
+product.setName("Another name");
+dbContext.saveChanges();
+  
