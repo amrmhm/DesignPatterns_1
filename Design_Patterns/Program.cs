@@ -412,4 +412,81 @@
 //// change our in-memory object again and save the changes.
 //product.setName("Another name");
 //dbContext.saveChanges();
-  
+
+//using Design_Patterns.ProtoType.EX;
+
+//var timeline = new Timeline();
+//var text = new Text("Hello");
+//timeline.add(text);
+
+//var menu = new ContextMenu(timeline);
+//menu.duplicate(text);
+
+
+//using Design_Patterns.Singleton;
+
+//var manger = ConfigManger.getInstance();
+//manger.set("name", "Amer");
+
+//var manger2 = ConfigManger.getInstance();
+//Console.WriteLine(manger2.get("name"));
+
+
+
+//using Design_Patterns.Singleton.EX;
+
+//var logger1 = Logger.getInstance("file1");
+//var logger2 = Logger.getInstance("file1");
+//Console.WriteLine (logger1 == logger2);
+
+//var logger3 = Logger.getInstance("file2");
+//Console.WriteLine (logger1 == logger3);
+
+//using Design_Patterns.FactoryMethod;
+//using Design_Patterns.FactoryMethod.Matcha;
+
+//new ProductController().ListProduct();
+
+// Standard scheduler using the Gregorian calendar
+
+//using Design_Patterns.FactoryMethod.EX;
+
+//var scheduler = new Scheduler();
+//scheduler.schedule(new Events());
+
+//// Arabian scheduler using the Arabian calendar
+//var arabianScheduler = new ArabianScheduler();
+//arabianScheduler.schedule(new Events());
+
+//using Design_Patterns.AbstractFactory.Ant;
+//using Design_Patterns.AbstractFactory.App;
+//using Design_Patterns.AbstractFactory.Material;
+
+//var contentForm = new ContentForm();
+//contentForm.render(new AntWidgetFactory());
+
+//using Design_Patterns.AbstractFactory.EX;
+
+//var homePage = new HomePage();
+//homePage.setGoal(new WeightLossFactory());
+
+//using Design_Patterns.Builder;
+
+//var presention = new Presention();
+//presention.addSlide(new Slide("text"));
+//presention.addSlide(new Slide("text2"));
+//var pdf = new PdfPresentionBuilder();
+// presention.export(pdf);
+// pdf.get();
+
+using Design_Patterns.Builder.EX;
+
+
+var document = new Document();
+document.add(new Text("Hello World"));
+document.add(new Image("pic1.jpg"));
+
+document.export(new HtmlDocumentBuilder(), "export.html");
+
+// Only writes the text elements to the file
+document.export(new TextDocumentBuilder(), "export.txt");
